@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Calculation app web server",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "mocha",
     "start": "node server.js",
