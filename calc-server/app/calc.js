@@ -15,8 +15,8 @@ export function divide(a, b) {
 }
 
 export const operations = {
-  "+": add,
-  "-": subtract,
-  "x": multiply,
-  "/": divide
+  '+': add,
+  '-': subtract,
+  x: multiply,
+  '/': divide,
 };

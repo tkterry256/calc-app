@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import Operation from './models/operation.js';
 
-import logger from "./logger.js"
+import logger from './logger.js';
 
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -12,7 +12,7 @@ db.once('open', () => {
 });
 
 db.on('error', (err) => {
-  logger.error("MongoDB connection error", err);
+  logger.error('MongoDB connection error', err);
 });
 
 export function insertOperation(firstNumber, secondNumber, operator, result) {
@@ -33,5 +33,5 @@ export function getOperations(limit = -1, order = -1) {
     query = query.limit(limit);
   }
 
-	return query.exec();
+  return query.exec();
 }

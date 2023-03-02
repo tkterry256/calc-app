@@ -1,4 +1,4 @@
-import winston from "winston";
+import winston from 'winston';
 
 const options = {
   file: {
@@ -22,9 +22,9 @@ const logger = winston.createLogger({
   levels: winston.config.npm.levels,
   transports: [
     new winston.transports.File(options.file),
-    new winston.transports.Console(options.console)
+    new winston.transports.Console(options.console),
   ],
-  exitOnError: false
-})
+  exitOnError: false,
+});
 
 export default logger;

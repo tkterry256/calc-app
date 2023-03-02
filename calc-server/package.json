@@ -8,10 +8,10 @@
     "test": "mocha",
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "lint": "eslint",
+    "lint": "eslint .",
     "beautify": "prettier --write .",
-    "build:client": "npm run --prefix ../calc-client start",
-    "build:docker": "docker build . -t FauziaNaava/calc-app",
+    "build:client": "npm run --prefix ../calc-client build",
+    "build:docker": "docker build . -t fauzianaava/calc-app",
     "build": "run-s build:client build:docker"
   },
   "author": "",

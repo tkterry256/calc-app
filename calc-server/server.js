@@ -38,18 +38,18 @@ app.get('/history/:count', async (req, res) => {
 });
 
 app.get('*', (_, res) => {
-  res.redirect("/")
+  res.redirect('/');
 });
 
-app.use(logErrors)
-app.use(errorHandler)
+app.use(logErrors);
+app.use(errorHandler);
 
-function logErrors (err, req, res, next) {
-  console.error(err.stack)
-  next(err)
+function logErrors(err, req, res, next) {
+  console.error(err.stack);
+  next(err);
 }
-function errorHandler (err, req, res, next) {
-  res.status(500).send('Error!')
+function errorHandler(err, req, res, next) {
+  res.status(500).send('Error!');
 }
 
 const { PORT } = process.env;
