@@ -9,7 +9,7 @@ pipeline{
                     npm install
                 '''
                 sh '''
-                    cd calc-sever
+                    cd calc-server
                     npm install
                 '''
             }
