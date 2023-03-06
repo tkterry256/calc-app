@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
         DOCKER_HUB = credentials('docker-hub-fauzia')
-        MONGO_DEV - credentials('mongo-development-uri')
+        MONGO_DEV = credentials('mongo-development-uri')
         MONGO_PROD = credentials('mongo-production-uri')
     }
     stages{
