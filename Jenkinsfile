@@ -75,6 +75,10 @@ pipeline{
                 fauzianaava/calc-app:$BUILD_NUMBER
                 '''
             }
+            input{
+                message "Press Ok to continue"
+                submitter "coder"
+	        }
             
         }
     }
