@@ -89,7 +89,7 @@ function alertError() {
     <h1
       class="h-10 flex justify-center items-center border-b border-b-gray-300 py-0.5 text-sm font-semibold"
     >
-      <span class="text-lg">CalcApp </span>
+      <span class="text-lg">Group 4 CalcApp </span>
       <span
         v-if="calcState === 'error'"
         class="uppercase text-red-500 font-bold"
@@ -130,7 +130,7 @@ function alertError() {
       type="button"
       @click="handleCalculate"
       :disabled="calcState === 'loading'"
-      class="w-full max-w-xs mx-auto mb-3 flex justify-center items-center py-1 bg-blue-600 text-white font-semibold text-lg disabled:bg-blue-300"
+      class="w-full max-w-xs mx-auto mb-3 flex justify-center items-center py-1 bg-green-600 text-white font-semibold text-lg disabled:bg-blue-300"
     >
       {{ calcState === "loading" ? "Calculating" : "Calculate" }}
     </button>
