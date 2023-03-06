@@ -8,6 +8,10 @@ pipeline{
                     cd calc-client
                     npm install
                 '''
+                sh '''
+                    cd calc-sever
+                    npm install
+                '''
             }
             
         }
