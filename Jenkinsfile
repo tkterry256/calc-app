@@ -3,16 +3,25 @@ pipeline{
     stages{
         stage('Install Dependencies'){
             // npm install
-            echo '#####Installing Dependencies#########'
+            steps{
+                echo '#####Installing Dependencies#########'
+            }
+            
         }
 
         stage('Run Test'){
             // npm run test
-            echo '#####Running Tests#########'
+            steps{
+                echo '#####Running Tests#########'
+            }
+            
         }
 
         stage('Run Build'){
-            echo '#####Running Build#########'
+            steps{
+                echo '#####Running Build#########'
+            }
+            
         }
     }
 }
