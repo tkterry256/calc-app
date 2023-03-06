@@ -34,6 +34,12 @@ pipeline{
                     cd calc-server
                     docker build . -t fauzianaava/calc-app:$BUILD_NUMBER
                 '''
+
+                sh '''
+                    cd calc-server
+                    docker login -u $dockerHubUsername -p $dockerHubPassword
+                    docker push fauzianaava/albertcalc:$BUILD_NUMBER
+                '''
             }
             
         }
