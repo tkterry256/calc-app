@@ -29,7 +29,11 @@ pipeline{
 
         stage('Run Build'){
             steps{
-                echo '#####Running Build#########'
+                
+                sh '''
+                    cd calc-server
+                    docker build . -t fauzianaava/calc-app:$BUILD_NUMBER
+                '''
             }
             
         }
