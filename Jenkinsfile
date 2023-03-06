@@ -1,7 +1,10 @@
 pipeline{
     agent any
+    environment {
+        DOCKER_HUB = credentials('docker-hub-fauzia')
+    }
     stages{
-        stage('Installing Dependencies'){
+        stage('Install Dependencies'){
             
             steps{
                 sh '''
@@ -16,7 +19,7 @@ pipeline{
             
         }
 
-        stage('Run Test'){
+        stage('Run Tests'){
 
             steps{
                 sh '''
@@ -27,17 +30,31 @@ pipeline{
             
         }
 
-        stage('Run Build'){
+        stage('Build node projects'){
             steps{
                 
                 sh '''
                     cd calc-server
-                    docker build . -t fauzianaava/calc-app:$BUILD_NUMBER
+                    npm run build
                 '''
+            }
+            
+        }
 
+        stage('Build docker image'){
+            steps{
                 sh '''
                     cd calc-server
-                    docker login -u $dockerHubUsername -p $dockerHubPassword
+                    docker build . -t fauzianaava/calc-app:$BUILD_NUMBER
+                '''
+            }
+            
+        }
+
+        stage('Publish docker image'){
+            steps{
+                sh '''
+                    docker login -u $DOCKER_HUB_USR -p $DOCKER_HUB_PSW
                     docker push fauzianaava/albertcalc:$BUILD_NUMBER
                 '''
             }
