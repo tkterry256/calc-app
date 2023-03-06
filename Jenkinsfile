@@ -5,12 +5,8 @@ pipeline{
             
             steps{
                 sh '''
-                cd ./calc-client'
-                npm install
-                '''
-                sh '''
-                cd ./calc-server'
-                npm install
+                    cd ./calc-client
+                    npm install
                 '''
             }
             
