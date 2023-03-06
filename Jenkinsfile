@@ -17,9 +17,12 @@ pipeline{
         }
 
         stage('Run Test'){
-            // npm run test
+
             steps{
-                echo '#####Running Tests#########'
+                sh '''
+                    cd calc-server
+                    npm run test
+                '''
             }
             
         }
