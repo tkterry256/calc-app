@@ -54,7 +54,7 @@ pipeline{
         stage('Publish docker image'){
             steps{
                 sh '''
-                    docker login -u $DOCKER_HUB_USR -p $DOCKER_HUB_PSW
+                    docker login -u $DOCKER_HUB_USR --password-stdin $DOCKER_HUB_PSW
                     docker push fauzianaava/albertcalc:$BUILD_NUMBER
                 '''
             }
