@@ -1,10 +1,13 @@
 pipeline{
     agent any
     stages{
-        stage('Install Dependencies'){
-            // npm install
+        stage('Installing Dependencies'){
+            
             steps{
-                echo '#####Installing Dependencies#########'
+                sh 'cd ./calc-client'
+                sh 'npm install'
+                sh 'cd ../calc-server'
+                sh 'npm install'
             }
             
         }
