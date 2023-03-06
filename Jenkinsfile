@@ -4,7 +4,10 @@ pipeline{
         stage('Installing Dependencies'){
             
             steps{
-                sh 'cd calc-client && npm install'
+                sh '''
+                    cd calc-client
+                    npm install
+                '''
             }
             
         }
