@@ -5,7 +5,7 @@ pipeline{
             
             steps{
                 sh '''
-                    cd ./calc-client
+                    cd calc-client
                     npm install
                 '''
             }
