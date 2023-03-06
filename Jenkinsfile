@@ -55,7 +55,7 @@ pipeline{
             steps{
                 sh '''
                     echo $DOCKER_HUB_PSW | docker login -u $DOCKER_HUB_USR --password-stdin
-                    docker push fauzianaava/albertcalc:$BUILD_NUMBER
+                    docker push fauzianaava/calc-app:$BUILD_NUMBER
                 '''
             }
             
