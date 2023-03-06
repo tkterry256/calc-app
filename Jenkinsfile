@@ -69,7 +69,7 @@ pipeline{
             steps{
                 sh '''
                     docker run \\
-                -e MONGO_PROD="${MONGO_PROD}" MONGO_DEV="${MONGO_DEV}" -e PORT='8080' -e NODE_ENV=development \\
+                -e MONGO_PROD="${MONGO_PROD}" -e MONGO_DEV="${MONGO_DEV}" -e PORT='8080' -e NODE_ENV=development \\
                 -d -p 5000:8080 --name calc-app-dev \\
                 fauzianaava/calc-app:$BUILD_NUMBER
                 '''
