@@ -4,7 +4,10 @@ import Operation from './models/operation.js';
 
 import logger from './logger.js';
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+const {MONGO_PROD, MONGO_DEV} = process.env;
+const mongoUri = process.env.NODE_ENV === 'production' ? MONGO_PROD : MONGO_DEV;
+
+mongoose.connect(mongoUri, { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
