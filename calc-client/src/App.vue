@@ -89,7 +89,7 @@ function alertError() {
     <h1
       class="h-10 flex justify-center items-center border-b border-b-gray-300 py-0.5 text-sm font-semibold"
     >
-      <span class="text-lg">CalcApp </span>
+      <span class="text-lg">Group 4 CalcApp </span>
       <span
         v-if="calcState === 'error'"
         class="uppercase text-red-500 font-bold"
