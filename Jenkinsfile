@@ -49,7 +49,7 @@ pipeline{
                 // 20
                 sh '''
                     cd calc-server
-                    docker build . -t fauzianaava/calc-app:$BUILD_NUMBER
+                    docker build . -t tkterry256/calc-app:$BUILD_NUMBER
                 '''
             }
             
@@ -59,7 +59,7 @@ pipeline{
             steps{
                 sh '''
                     echo $DOCKER_HUB_PSW | docker login -u $DOCKER_HUB_USR --password-stdin
-                    docker push fauzianaava/calc-app:$BUILD_NUMBER
+                    docker push tkterry256/calc-app:$BUILD_NUMBER
                 '''
             }
             
@@ -73,7 +73,7 @@ pipeline{
                     docker run \\
                 -e MONGO_PROD="${MONGO_PROD}" -e MONGO_DEV="${MONGO_DEV}" -e PORT='8080' -e NODE_ENV=development \\
                 -d -p 5000:8080 --name calc-app-dev \\
-                fauzianaava/calc-app:$BUILD_NUMBER
+                tkterry256/calc-app:$BUILD_NUMBER
                 '''
             }
         }
@@ -86,7 +86,7 @@ pipeline{
                     docker run \\
                 -e MONGO_PROD="${MONGO_PROD}" -e MONGO_DEV="${MONGO_DEV}" -e PORT='8080' -e NODE_ENV=production \\
                 -d -p 8000:8080 --name calc-app \\
-                fauzianaava/calc-app:$BUILD_NUMBER
+                tkterry256/calc-app:$BUILD_NUMBER
                 '''
             }
         }
