@@ -3,6 +3,7 @@ module.exports = {
     es2021: true,
     node: true,
     mocha: true,
+    cucumber: true
   },
   extends: ['airbnb-base', 'eslint-config-prettier'],
   overrides: [],
